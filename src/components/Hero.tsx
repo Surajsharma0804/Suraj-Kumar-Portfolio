@@ -30,7 +30,7 @@ const Hero = () => {
 
         {/* Subtitle */}
         <p className="text-xl md:text-2xl text-muted-foreground mb-2 opacity-0 animate-slide-up stagger-2">
-          Aspiring Full Stack Developer
+          Aspiring Full Stack Developer && AI/ML Enthusiast
         </p>
         
         <p className="text-base md:text-lg text-primary/80 mb-6 opacity-0 animate-slide-up stagger-2">

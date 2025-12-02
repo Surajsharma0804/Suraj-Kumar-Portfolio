@@ -4,7 +4,7 @@ import { Trophy, Medal, Star, TrendingUp } from "lucide-react";
 const achievements = [
   {
     title: "District-level Quiz Competition",
-    rank: "Rank 7",
+    rank: "Rank 13",
     participants: "13,000+",
     year: "2019",
     icon: Trophy,

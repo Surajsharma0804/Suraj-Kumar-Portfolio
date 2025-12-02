@@ -99,7 +99,9 @@ const AboutSection = () => {
                 Career Objective
               </h4>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Motivated Computer Science student and AI/ML enthusiast with strengths in software engineering, problem-solving, and full-stack development. Skilled in Python, JavaScript, SQL, and C, supported by hands-on experience from hackathons and industry simulations. Focused on building real-world applications while advancing in AI/ML technologies.
+                Motivated Computer Science student and AI/ML enthusiast with strengths in software engineering, problem-solving, and full-stack development.
+                Skilled in Python, JavaScript, SQL, and C, supported by hands-on experience from hackathons and industry simulations.
+                Focused on building real-world applications while advancing in AI/ML technologies.
               </p>
             </div>
 
