@@ -109,7 +109,7 @@ const AboutSection = () => {
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                   <GraduationCap className="w-5 h-5 text-primary" />
                 </div>
-                Education Journey
+                Educational Journey
               </h4>
               
               <div className="relative">
