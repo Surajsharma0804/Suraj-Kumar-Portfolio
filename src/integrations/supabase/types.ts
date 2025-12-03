@@ -1,4 +1,3 @@
-// src/types.ts
 export type Json =
   | string
   | number
@@ -8,41 +7,13 @@ export type Json =
   | Json[]
 
 export type Database = {
+  // Allows to automatically instantiate createClient with right options
+  // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "13.0.5"
   }
   public: {
     Tables: {
-      resumes: {
-        Row: {
-          id: number
-          user_id: string
-          file_url: string
-          file_name: string
-          mime_type: string | null
-          size_bytes: number | null
-          created_at: string | null
-        }
-        Insert: {
-          id?: number
-          user_id: string
-          file_url: string
-          file_name: string
-          mime_type?: string | null
-          size_bytes?: number | null
-          created_at?: string | null
-        }
-        Update: {
-          id?: number
-          user_id?: string
-          file_url?: string
-          file_name?: string
-          mime_type?: string | null
-          size_bytes?: number | null
-          created_at?: string | null
-        }
-      }
-      // add other tables here...
       [_ in never]: never
     }
     Views: {
