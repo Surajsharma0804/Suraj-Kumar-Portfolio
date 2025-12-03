@@ -26,8 +26,8 @@ const education = [
 
 const interests = [
   { icon: Code, label: "Full Stack Development" },
-  { icon: Brain, label: "AI/ML Enthusiast" },
-  { icon: Target, label: "Problem Solver" },
+  { icon: Brain, label: "AI / Machine Learning" },
+  { icon: Target, label: "Problem Solving" },
 ];
 
 const AboutSection = () => {
@@ -64,7 +64,7 @@ const AboutSection = () => {
                   </div>
                 </div>
                 <h3 className="font-display text-xl font-bold text-foreground mb-1">Suraj Kumar</h3>
-                <p className="text-primary font-medium text-sm mb-2">Aspiring Full Stack Developer && AI/ML Enthusiast</p>
+                <p className="text-primary font-medium text-sm mb-2">Aspiring Full Stack Developer</p>
                 <div className="flex items-center gap-1.5 text-muted-foreground text-sm">
                   <MapPin className="w-3.5 h-3.5" />
                   <span>Bihar, India</span>
@@ -82,7 +82,7 @@ const AboutSection = () => {
               </h4>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Motivated Computer Science student skilled in software engineering, problem-solving, and full-stack development. 
-                Strong foundation in Python, JavaScript, SQL, and C++ with practical experience from hackathons and industry simulations. 
+                Strong foundation in Python, JavaScript, SQL, and C with practical experience from hackathons and industry simulations. 
                 Seeking opportunities to build real-world applications while exploring AI/ML technologies.
               </p>
             </div>
@@ -109,7 +109,7 @@ const AboutSection = () => {
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                   <GraduationCap className="w-5 h-5 text-primary" />
                 </div>
-                Educational Journey
+                Education Journey
               </h4>
               
               <div className="relative">

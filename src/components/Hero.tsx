@@ -36,7 +36,7 @@ const Hero = () => {
 
         {/* Subtitle with gradient */}
         <p className="text-xl md:text-2xl text-muted-foreground mb-2 opacity-0 animate-slide-up stagger-2">
-          Aspiring Full Stack Developer && AI/ML Enthusiast <span className="text-primary/60">&amp;&amp;</span> AI/ML Enthusiast
+          Aspiring Full Stack Developer <span className="text-primary/60">&amp;&amp;</span> AI/ML Enthusiast
         </p>
         
         <p className="text-base md:text-lg bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-medium mb-8 opacity-0 animate-slide-up stagger-2">
@@ -70,7 +70,7 @@ const Hero = () => {
           >
             <a href="/resume.pdf" download="Suraj_Kumar_Resume.pdf">
               <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-              Download My Resume
+              Download Resume
             </a>
           </Button>
           

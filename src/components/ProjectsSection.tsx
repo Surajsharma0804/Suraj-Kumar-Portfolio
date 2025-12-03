@@ -150,7 +150,7 @@ const ProjectsSection = () => {
               Featured Projects
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              A selection of projects showcasing a bit of different skills and technologies.
+              A selection of projects showcasing different skills and technologies.
             </p>
           </div>
         </ScrollReveal>

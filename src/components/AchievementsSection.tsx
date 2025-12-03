@@ -4,7 +4,7 @@ import ScrollReveal from "./ScrollReveal";
 const achievements = [
   {
     title: "District-level Quiz Competition",
-    rank: "Rank 5th",
+    rank: "Rank 7",
     participants: "13,000+",
     year: "2019",
     icon: Trophy,
