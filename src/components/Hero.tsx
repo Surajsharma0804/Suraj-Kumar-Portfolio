@@ -49,7 +49,7 @@ const Hero = () => {
             <a href="#projects">View My Projects</a>
           </Button>
           <Button asChild size="lg" variant="outline" className="w-full sm:w-auto border-border hover:border-primary/50 hover:bg-primary/5">
-            <a href="https://drive.google.com/file/d/1GQuRLd02XpAa5lxB0qoyaUb2zRf8xpki/view?usp=sharing" download="Suraj_Kumar_Resume.pdf">
+            <a href="https://drive.google.com/uc?export=download&id=1GQuRLd02XpAa5lxB0qoyaUb2zRf8xpki" download="Suraj_Kumar_Resume.pdf">
               <Download className="w-4 h-4 mr-2" />
               Download Resume
             </a>
