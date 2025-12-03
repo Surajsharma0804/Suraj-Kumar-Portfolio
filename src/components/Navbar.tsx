@@ -42,20 +42,26 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-lg"
+          ? "bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-2xl"
           : "bg-transparent"
       )}
     >
-      <nav className="container max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="font-display text-xl font-bold text-gradient hover:opacity-80 transition-opacity">
-          Suraj.dev
+      <nav className="container max-w-7xl mx-auto px-6 lg:px-8 h-18 flex items-center justify-between py-4">
+        {/* Logo - Left Corner */}
+        <a 
+          href="#" 
+          className="font-display text-2xl font-bold text-gradient hover:scale-105 transition-all duration-300 flex items-center gap-2"
+        >
+          <span className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center text-primary-foreground text-sm font-bold">
+            S
+          </span>
+          <span className="hidden sm:inline">Suraj.dev</span>
         </a>
 
-        {/* Desktop Navigation */}
-        <ul className="hidden lg:flex items-center gap-6">
+        {/* Desktop Navigation - Right Side */}
+        <ul className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace("#", "") || 
                            (link.href === "#" && activeSection === "");
@@ -64,11 +70,10 @@ const Navbar = () => {
                 <a
                   href={link.href}
                   className={cn(
-                    "text-sm transition-colors relative py-1",
-                    "after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary hover:after:w-full after:transition-all",
+                    "px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 relative",
                     isActive 
-                      ? "text-primary after:w-full" 
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "text-primary-foreground bg-gradient-primary shadow-lg" 
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                   )}
                 >
                   {link.label}
@@ -81,32 +86,41 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
+          className="lg:hidden p-3 rounded-xl bg-secondary/50 border border-border/50 text-foreground hover:text-primary hover:border-primary/30 transition-all duration-300"
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </nav>
 
       {/* Mobile Menu */}
       <div
         className={cn(
-          "lg:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border transition-all duration-300",
-          isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          "lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border/50 transition-all duration-300 shadow-2xl",
+          isMobileMenuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-4"
         )}
       >
-        <ul className="container px-4 py-4 space-y-2">
-          {navLinks.map((link) => (
-            <li key={link.label}>
-              <a
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-foreground hover:text-primary hover:bg-secondary/50 transition-colors py-3 px-4 rounded-lg"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+        <ul className="container px-6 py-6 space-y-1">
+          {navLinks.map((link, index) => {
+            const isActive = activeSection === link.href.replace("#", "") || 
+                           (link.href === "#" && activeSection === "");
+            return (
+              <li key={link.label} style={{ animationDelay: `${index * 50}ms` }}>
+                <a
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={cn(
+                    "block py-3 px-4 rounded-xl font-medium transition-all duration-300",
+                    isActive 
+                      ? "text-primary-foreground bg-gradient-primary" 
+                      : "text-foreground hover:text-primary hover:bg-secondary/50"
+                  )}
+                >
+                  {link.label}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </header>
