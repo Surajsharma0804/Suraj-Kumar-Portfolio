@@ -11,15 +11,20 @@ if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
   );
 }
 
+/** Detect browser environment (prevents errors in SSR/tooling) */
+const isBrowser = typeof window !== 'undefined' && typeof window.localStorage !== 'undefined';
+
 /**
- * Exported typed supabase client.
- * Use: import { supabase } from "@/integrations/supabase/client";
+ * Typed Supabase client.
+ * Usage: import { supabase } from "@/integrations/supabase/client";
+ *
+ * IMPORTANT:
+ * - Do NOT use service_role (secret) keys here; keep them server-side.
  */
 export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
   auth: {
-    storage: localStorage,
-    persistSession: true,
-    autoRefreshToken: true,
+    storage: isBrowser ? (window.localStorage as unknown as Storage) : undefined,
+    persistSession: isBrowser,
+    autoRefreshToken: isBrowser,
   },
-  // Add any other default options you need here
 });

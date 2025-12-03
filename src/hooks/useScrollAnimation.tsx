@@ -1,49 +1,41 @@
-import { Helmet } from "react-helmet-async";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import AboutSection from "@/components/AboutSection";
-import TechnicalSkills from "@/components/TechnicalSkills";
-import ProjectsSection from "@/components/ProjectsSection";
-import CertificationsSection from "@/components/CertificationsSection";
-import AchievementsSection from "@/components/AchievementsSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+import { useEffect, useRef, useState } from "react";
 
-const Index = () => {
-  return (
-    <>
-      <Helmet>
-        <title>Suraj Kumar | Full Stack Developer && AI/ML Enthusiast Portfolio</title>
-        <meta name="description" content="Suraj Kumar - Aspiring Full Stack Developer & B.Tech CSE student at Lovely Professional University. Skilled in JavaScript, Python, React, and AI/ML. View my projects and certifications." />
-        <meta name="keywords" content="Suraj Kumar, Full Stack Developer, Web Developer, Portfolio, JavaScript, Python, React, B.Tech CSE, LPU, AI ML" />
-        <link rel="canonical" href="https://surajkumar.dev" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Suraj Kumar | Full Stack Developer Portfolio" />
-        <meta property="og:description" content="Aspiring Full Stack Developer skilled in JavaScript, Python, and modern web technologies." />
-        <meta property="og:type" content="website" />
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Suraj Kumar | Full Stack Developer Portfolio" />
-        <meta name="twitter:description" content="Aspiring Full Stack Developer skilled in JavaScript, Python, and modern web technologies." />
-      </Helmet>
+interface UseScrollAnimationOptions {
+  threshold?: number;
+  rootMargin?: string;
+  triggerOnce?: boolean;
+}
 
-      <div className="min-h-screen bg-background">
-        <Navbar />
-        <main>
-          <Hero />
-          <AboutSection />
-          <TechnicalSkills />
-          <ProjectsSection />
-          <CertificationsSection />
-          <AchievementsSection />
-          <ContactSection />
-        </main>
-        <Footer />
-      </div>
-    </>
-  );
+export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
+  const { threshold = 0.1, rootMargin = "0px", triggerOnce = true } = options;
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          if (triggerOnce && ref.current) {
+            observer.unobserve(ref.current);
+          }
+        } else if (!triggerOnce) {
+          setIsVisible(false);
+        }
+      },
+      { threshold, rootMargin }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [threshold, rootMargin, triggerOnce]);
+
+  return { ref, isVisible };
 };
-
-export default Index;
