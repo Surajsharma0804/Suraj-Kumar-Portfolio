@@ -68,7 +68,7 @@ const Hero = () => {
             variant="outline" 
             className="w-full sm:w-auto border-2 border-primary/30 bg-secondary/50 backdrop-blur-sm hover:border-primary hover:bg-primary/10 px-8 py-6 text-base rounded-xl transition-all duration-300 hover:scale-105 group"
           >
-            <a href="/resume.pdf" download="Suraj_Kumar_Resume.pdf">
+            <a href="https://drive.google.com/uc?export=download&id=1GQuRLd02XpAa5lxB0qoyaUb2zRf8xpki" download="Suraj_Kumar_Resume.pdf">
               <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
               Download Resume
             </a>
