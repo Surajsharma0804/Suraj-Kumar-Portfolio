@@ -21,7 +21,6 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      // Update active section based on scroll position
       const sections = navLinks.map(link => link.href.replace("#", "")).filter(Boolean);
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
@@ -44,23 +43,25 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled
-          ? "bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-2xl"
+          ? "bg-background/80 backdrop-blur-xl border-b border-border/30 shadow-lg"
           : "bg-transparent"
       )}
     >
-      <nav className="container max-w-7xl mx-auto px-6 lg:px-8 h-18 flex items-center justify-between py-4">
-        {/* Logo - Left Corner */}
+      <nav className="w-full px-6 lg:px-12 xl:px-20 h-16 flex items-center justify-between">
+        {/* Logo - Far Left */}
         <a 
           href="#" 
-          className="font-display text-2xl font-bold text-gradient hover:scale-105 transition-all duration-300 flex items-center gap-2"
+          className="font-display text-xl font-bold flex items-center gap-2 hover:opacity-80 transition-opacity"
         >
-          <span className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center text-primary-foreground text-sm font-bold">
+          <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground text-sm font-bold shadow-lg">
             S
           </span>
-          <span className="hidden sm:inline">Suraj.dev</span>
+          <span className="bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+            Suraj.dev
+          </span>
         </a>
 
-        {/* Desktop Navigation - Right Side */}
+        {/* Desktop Navigation - Far Right */}
         <ul className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace("#", "") || 
@@ -70,9 +71,9 @@ const Navbar = () => {
                 <a
                   href={link.href}
                   className={cn(
-                    "px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 relative",
+                    "px-4 py-2 text-sm font-medium rounded-full transition-all duration-300",
                     isActive 
-                      ? "text-primary-foreground bg-gradient-primary shadow-lg" 
+                      ? "text-primary-foreground bg-primary shadow-md" 
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                   )}
                 >
@@ -86,7 +87,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden p-3 rounded-xl bg-secondary/50 border border-border/50 text-foreground hover:text-primary hover:border-primary/30 transition-all duration-300"
+          className="lg:hidden p-2.5 rounded-lg bg-secondary/50 border border-border/50 text-foreground hover:bg-secondary transition-all"
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -96,24 +97,24 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border/50 transition-all duration-300 shadow-2xl",
+          "lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border/30 transition-all duration-300",
           isMobileMenuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-4"
         )}
       >
-        <ul className="container px-6 py-6 space-y-1">
-          {navLinks.map((link, index) => {
+        <ul className="px-6 py-4 space-y-1">
+          {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace("#", "") || 
                            (link.href === "#" && activeSection === "");
             return (
-              <li key={link.label} style={{ animationDelay: `${index * 50}ms` }}>
+              <li key={link.label}>
                 <a
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
-                    "block py-3 px-4 rounded-xl font-medium transition-all duration-300",
+                    "block py-2.5 px-4 rounded-lg font-medium transition-all duration-300",
                     isActive 
-                      ? "text-primary-foreground bg-gradient-primary" 
-                      : "text-foreground hover:text-primary hover:bg-secondary/50"
+                      ? "text-primary-foreground bg-primary" 
+                      : "text-foreground hover:bg-secondary/50"
                   )}
                 >
                   {link.label}

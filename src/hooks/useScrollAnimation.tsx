@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Suraj Kumar | Full Stack Developer Portfolio</title>
+        <title>Suraj Kumar | Full Stack Developer && AI/ML Enthusiast Portfolio</title>
         <meta name="description" content="Suraj Kumar - Aspiring Full Stack Developer & B.Tech CSE student at Lovely Professional University. Skilled in JavaScript, Python, React, and AI/ML. View my projects and certifications." />
         <meta name="keywords" content="Suraj Kumar, Full Stack Developer, Web Developer, Portfolio, JavaScript, Python, React, B.Tech CSE, LPU, AI ML" />
         <link rel="canonical" href="https://surajkumar.dev" />

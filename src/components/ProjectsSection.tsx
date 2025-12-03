@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
 import { ExternalLink, Github, Calendar, ArrowRight, Folder } from "lucide-react";
 import { Button } from "./ui/button";
+import ScrollReveal from "./ScrollReveal";
 import projectEcommerce from "@/assets/project-ecommerce.png";
 import projectTaskManager from "@/assets/project-taskmanager.png";
 
@@ -48,14 +48,9 @@ const projects = [
   },
 ];
 
-const ProjectCard = ({ project, index, isVisible }: { project: typeof projects[0]; index: number; isVisible: boolean }) => {
+const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
   return (
-    <div
-      className={`group relative bg-card/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-border/50 hover:border-primary/40 transition-all duration-500 hover:shadow-hover hover:-translate-y-2 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
-      style={{ transitionDelay: `${index * 150}ms` }}
-    >
+    <div className="group relative bg-card/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-border/50 hover:border-primary/40 transition-all duration-500 hover:shadow-hover hover:-translate-y-2">
       {/* Image */}
       <div className="relative h-48 overflow-hidden bg-secondary/50">
         <img
@@ -138,63 +133,49 @@ const ProjectCard = ({ project, index, isVisible }: { project: typeof projects[0
 };
 
 const ProjectsSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="projects" ref={sectionRef} className="py-24 px-4 relative overflow-hidden">
+    <section id="projects" className="py-24 px-4 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
       
       <div className="container max-w-6xl mx-auto relative">
         {/* Section Header */}
-        <div className={`text-center mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
-            <Folder className="w-4 h-4" />
-            Portfolio
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Featured Projects
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            A selection of projects showcasing different skills and technologies.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
+              <Folder className="w-4 h-4" />
+              Portfolio
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              Featured Projects
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              A selection of projects showcasing a bit of different skills and technologies.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Projects Grid */}
         <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 mb-14">
           {projects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} isVisible={isVisible} />
+            <ScrollReveal key={project.title} delay={index * 150} direction="scale">
+              <ProjectCard project={project} />
+            </ScrollReveal>
           ))}
         </div>
 
         {/* View All Button */}
-        <div className={`text-center transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          <Button asChild variant="outline" size="lg" className="group border-border hover:border-primary/50 hover:bg-primary/5">
-            <a href="https://github.com/Surajsharma0804" target="_blank" rel="noopener noreferrer">
-              <Github className="w-4 h-4 mr-2" />
-              View All on GitHub
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </Button>
-        </div>
+        <ScrollReveal delay={600}>
+          <div className="text-center">
+            <Button asChild variant="outline" size="lg" className="group border-border hover:border-primary/50 hover:bg-primary/5">
+              <a href="https://github.com/Surajsharma0804" target="_blank" rel="noopener noreferrer">
+                <Github className="w-4 h-4 mr-2" />
+                View All on GitHub
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -1,3 +1,4 @@
+// src/types.ts
 export type Json =
   | string
   | number
@@ -14,6 +15,36 @@ export type Database = {
   }
   public: {
     Tables: {
+      resumes: {
+        Row: {
+          id: number
+          user_id: string
+          file_url: string
+          file_name: string
+          mime_type: string | null
+          size_bytes: number | null
+          created_at: string | null
+        }
+        Insert: {
+          id?: number
+          user_id: string
+          file_url: string
+          file_name: string
+          mime_type?: string | null
+          size_bytes?: number | null
+          created_at?: string | null
+        }
+        Update: {
+          id?: number
+          user_id?: string
+          file_url?: string
+          file_name?: string
+          mime_type?: string | null
+          size_bytes?: number | null
+          created_at?: string | null
+        }
+      }
+      // add other tables here...
       [_ in never]: never
     }
     Views: {

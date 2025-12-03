@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from "react";
 import { 
   Code, Database, Globe, Server, 
   GitBranch, Terminal, Wrench, Users,
   FileCode, Palette, Lightbulb, Clock, Target, Eye
 } from "lucide-react";
 import SkillCard from "./SkillCard";
+import ScrollReveal from "./ScrollReveal";
 
 const skillCategories = [
   {
@@ -58,28 +58,8 @@ const additionalSkills = [
 ];
 
 const TechnicalSkills = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="skills" ref={sectionRef} className="py-24 px-4 relative overflow-hidden">
+    <section id="skills" className="py-24 px-4 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
       <div className="absolute top-1/4 -left-32 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
@@ -87,70 +67,64 @@ const TechnicalSkills = () => {
 
       <div className="container max-w-6xl mx-auto relative">
         {/* Section Header */}
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
-            Technical Skills
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Technologies I Work With
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            A growing toolkit of programming languages, frameworks, and technologies.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
+              Technical Skills
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              Technologies I Work With
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              A growing toolkit of programming languages, frameworks, and technologies.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Skills Grid */}
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {skillCategories.map((category, catIndex) => (
-            <div
-              key={category.title}
-              className={`p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-glow group ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: `${catIndex * 100}ms` }}
-            >
-              <div className="flex items-center gap-3 mb-5">
-                <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${category.color} p-0.5`}>
-                  <div className="w-full h-full rounded-[10px] bg-card flex items-center justify-center text-foreground">
-                    {category.icon}
+            <ScrollReveal key={category.title} delay={catIndex * 100}>
+              <div className="p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-glow group h-full">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${category.color} p-0.5`}>
+                    <div className="w-full h-full rounded-[10px] bg-card flex items-center justify-center text-foreground">
+                      {category.icon}
+                    </div>
                   </div>
+                  <h3 className="text-lg font-semibold text-foreground">{category.title}</h3>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground">{category.title}</h3>
-              </div>
-              <div className="space-y-3">
-                {category.skills.map((skill, skillIndex) => (
-                  <div
-                    key={skill.name}
-                    className={`transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
-                    style={{ transitionDelay: `${(catIndex * 100) + (skillIndex * 50) + 200}ms` }}
-                  >
+                <div className="space-y-3">
+                  {category.skills.map((skill) => (
                     <SkillCard
+                      key={skill.name}
                       name={skill.name}
                       icon={skill.icon}
                       level={skill.level}
                     />
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Additional Skills */}
-        <div className={`mt-16 text-center transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          <p className="text-sm font-medium text-muted-foreground mb-5">Also familiar with</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {additionalSkills.map((skill, index) => (
-              <span
-                key={skill}
-                className="px-4 py-2 text-sm font-medium rounded-full bg-secondary/80 text-muted-foreground border border-border/50 hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 cursor-default"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                {skill}
-              </span>
-            ))}
+        <ScrollReveal delay={500}>
+          <div className="mt-16 text-center">
+            <p className="text-sm font-medium text-muted-foreground mb-5">Also familiar with</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {additionalSkills.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-4 py-2 text-sm font-medium rounded-full bg-secondary/80 text-muted-foreground border border-border/50 hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 cursor-default"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
