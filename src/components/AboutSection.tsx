@@ -25,9 +25,9 @@ const education = [
 ];
 
 const interests = [
-  { icon: Code, label: "Full Stack Development" },
-  { icon: Brain, label: "AI / Machine Learning" },
-  { icon: Target, label: "Problem Solving" },
+  { icon: Code, label: "Full Stack Developer" },
+  { icon: Brain, label: "AI/ML Enthusiast" },
+  { icon: Target, label: "Problem Solver" },
 ];
 
 const AboutSection = () => {
