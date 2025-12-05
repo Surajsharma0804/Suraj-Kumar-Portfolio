@@ -11,7 +11,7 @@ const projects = [
     description: "Elite AI-powered workflow automation platform with real-time monitoring, performance metrics, and intelligent task orchestration. Features a modern dashboard with system status tracking, workflow analytics, and comprehensive audit logging. (Note: Hosted on Render free tier - may take 30-60 seconds to wake up on first visit)",
     image: projectAgenticWorkflows,
     techStack: ["Python", "AI/ML", "Workflow Automation", "Dashboard UI"],
-    liveUrl: "https://agentic-workflows-pm7n.onrender.com",
+    liveUrl: "https://agentic-workflows-pm7o.onrender.com/login",
     githubUrl: "https://github.com/Surajsharma0804/Agentic-Workflows-in-Python",
     date: "Dec 2024",
     featured: true,
