@@ -32,31 +32,31 @@ const interests = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 px-4 bg-gradient-subtle relative overflow-hidden">
-      {/* Enhanced Background elements */}
-      <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
-      <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--primary)/0.05)_1.5px,transparent_1.5px),linear-gradient(90deg,hsl(var(--primary)/0.05)_1.5px,transparent_1.5px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,black_30%,transparent_100%)]" />
+    <section id="about" className="py-24 px-4 bg-secondary/20 relative overflow-hidden">
+      {/* Minimal Background */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
       
       <div className="container max-w-6xl mx-auto relative">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-strong text-primary text-sm font-semibold mb-6 border border-primary/30 shadow-glow">
-              <Sparkles className="w-4 h-4" />
+            <span className="inline-block px-4 py-1.5 rounded-md bg-primary/10 text-primary text-sm font-medium mb-4">
               About Me
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 tracking-tight">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3 tracking-tight">
               Get to Know Me
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full" />
+            <p className="text-muted-foreground/70 max-w-2xl mx-auto">
+              Background, education, and what drives me
+            </p>
           </div>
         </ScrollReveal>
 
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-12">
           {/* Profile & Bio - Left Side */}
           <ScrollReveal direction="left" delay={200} className="lg:col-span-2">
-            {/* Enhanced Profile Card */}
-            <div className="p-6 rounded-2xl glass-strong border border-border/60 hover:border-primary/40 hover:shadow-glow transition-all duration-300 mb-6">
+            {/* Clean Profile Card */}
+            <div className="card-premium p-6 mb-6">
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-4">
                   <div className="w-28 h-28 rounded-2xl overflow-hidden border-2 border-primary/30 shadow-glow">
