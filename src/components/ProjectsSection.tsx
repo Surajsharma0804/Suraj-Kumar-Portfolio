@@ -3,8 +3,20 @@ import { Button } from "./ui/button";
 import ScrollReveal from "./ScrollReveal";
 import projectEcommerce from "@/assets/project-ecommerce.png";
 import projectTaskManager from "@/assets/project-taskmanager.png";
+import projectAgenticWorkflows from "@/assets/project-agentic-workflows.png";
 
 const projects = [
+  {
+    title: "Agentic Workflows in Python",
+    description: "Elite AI-powered workflow automation platform with real-time monitoring, performance metrics, and intelligent task orchestration. Features a modern dashboard with system status tracking, workflow analytics, and comprehensive audit logging.",
+    image: projectAgenticWorkflows,
+    techStack: ["Python", "AI/ML", "Workflow Automation", "Dashboard UI"],
+    liveUrl: "https://agentic-workflows-pm7n.onrender.com",
+    githubUrl: "https://github.com/Surajsharma0804/Agentic-Workflows-in-Python",
+    date: "Dec 2024",
+    featured: true,
+    badge: "AI/ML",
+  },
   {
     title: "Car Rental Website",
     description: "A responsive platform for booking and managing car rentals with real-time availability, pricing, and user-friendly UI. Includes secure booking flow and modern design principles.",
@@ -31,20 +43,10 @@ const projects = [
     description: "A modern, responsive portfolio built with React, TypeScript, and Tailwind CSS. Features smooth animations, dark theme, and optimized performance.",
     image: projectEcommerce,
     techStack: ["React", "TypeScript", "Tailwind CSS"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/Surajsharma0804",
+    liveUrl: "https://surajkumar.site",
+    githubUrl: "https://github.com/Surajsharma0804/Suraj-Kumar-Portfolio",
     date: "Dec 2024",
     badge: "Latest",
-  },
-  {
-    title: "Coming Soon",
-    description: "More exciting projects in development! Currently exploring full-stack applications with Node.js, Express, MongoDB, and AI/ML integrations.",
-    image: projectTaskManager,
-    techStack: ["Node.js", "Express", "MongoDB", "Python"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/Surajsharma0804",
-    date: "2025",
-    badge: "In Progress",
   },
 ];
 
