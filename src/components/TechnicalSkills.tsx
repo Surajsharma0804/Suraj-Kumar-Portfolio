@@ -60,25 +60,23 @@ const additionalSkills = [
 const TechnicalSkills = () => {
   return (
     <section id="skills" className="py-24 px-4 relative overflow-hidden">
-      {/* Enhanced Background decoration */}
-      <div className="absolute inset-0 bg-gradient-mesh opacity-40" />
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/10 rounded-full blur-[120px]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/5 to-transparent rounded-full" />
+      {/* Exciting Background */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] animate-pulse-glow" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px] animate-pulse-glow" style={{ animationDelay: '1.5s' }} />
 
       <div className="container max-w-6xl mx-auto relative">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-strong text-primary text-sm font-semibold mb-6 border border-primary/30 shadow-glow">
+            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-300 text-sm font-semibold mb-6 animate-pulse-glow">
               <Code className="w-4 h-4" />
               Technical Skills
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 tracking-tight">
-              Technologies I Work With
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 tracking-tight">
+              Technologies I <span className="text-gradient bg-gradient-to-r from-cyan-400 to-blue-400">Work With</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full mb-6" />
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            <p className="text-white/70 max-w-2xl mx-auto text-lg">
               A growing toolkit of programming languages, frameworks, and technologies.
             </p>
           </div>
@@ -88,14 +86,14 @@ const TechnicalSkills = () => {
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {skillCategories.map((category, catIndex) => (
             <ScrollReveal key={category.title} delay={catIndex * 100}>
-              <div className="p-6 rounded-2xl glass-strong border border-border/60 hover:border-primary/40 transition-all duration-500 hover:shadow-glow group h-full">
+              <div className="card-glow p-6 h-full hover-glow-blue">
                 <div className="flex items-center gap-3 mb-5">
                   <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${category.color} p-0.5`}>
                     <div className="w-full h-full rounded-[10px] bg-card flex items-center justify-center text-foreground">
                       {category.icon}
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground">{category.title}</h3>
+                  <h3 className="text-lg font-semibold text-white">{category.title}</h3>
                 </div>
                 <div className="space-y-3">
                   {category.skills.map((skill) => (
@@ -115,12 +113,12 @@ const TechnicalSkills = () => {
         {/* Additional Skills */}
         <ScrollReveal delay={500}>
           <div className="mt-16 text-center">
-            <p className="text-sm font-medium text-muted-foreground mb-5">Also familiar with</p>
+            <p className="text-sm font-medium text-white/70 mb-5">Also familiar with</p>
             <div className="flex flex-wrap justify-center gap-3">
               {additionalSkills.map((skill) => (
                 <span
                   key={skill}
-                  className="px-4 py-2 text-sm font-medium rounded-full bg-secondary/80 text-muted-foreground border border-border/50 hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 cursor-default"
+                  className="px-4 py-2 text-sm font-medium rounded-full glass-vibrant text-white/80 border border-purple-500/30 hover:text-white hover:border-purple-500/60 hover:bg-purple-500/20 hover:scale-105 transition-all duration-300 cursor-default"
                 >
                   {skill}
                 </span>

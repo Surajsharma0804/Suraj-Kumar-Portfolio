@@ -32,21 +32,23 @@ const interests = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 px-4 bg-secondary/20 relative overflow-hidden">
-      {/* Minimal Background */}
-      <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
+    <section id="about" className="py-24 px-4 relative overflow-hidden">
+      {/* Exciting Background */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-l from-purple-500/20 to-transparent rounded-full blur-[100px] animate-pulse-glow" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-r from-cyan-500/20 to-transparent rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
       
       <div className="container max-w-6xl mx-auto relative">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-md bg-primary/10 text-primary text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-300 text-sm font-semibold mb-6 animate-pulse-glow">
               About Me
             </span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3 tracking-tight">
-              Get to Know Me
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+              Get to <span className="text-gradient bg-gradient-to-r from-purple-400 to-pink-400">Know Me</span>
             </h2>
-            <p className="text-muted-foreground/70 max-w-2xl mx-auto">
+            <p className="text-white/70 max-w-2xl mx-auto text-lg">
               Background, education, and what drives me
             </p>
           </div>
@@ -55,8 +57,8 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-12">
           {/* Profile & Bio - Left Side */}
           <ScrollReveal direction="left" delay={200} className="lg:col-span-2">
-            {/* Clean Profile Card */}
-            <div className="card-premium p-6 mb-6">
+            {/* Glowing Profile Card */}
+            <div className="card-glow p-6 mb-6 hover-glow-purple">
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-4">
                   <div className="w-28 h-28 rounded-2xl overflow-hidden border-2 border-primary/30 shadow-glow">
