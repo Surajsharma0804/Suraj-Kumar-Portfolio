@@ -8,7 +8,7 @@ import projectAgenticWorkflows from "@/assets/project-agentic-workflows.png";
 const projects = [
   {
     title: "Agentic Workflows in Python",
-    description: "Elite AI-powered workflow automation platform with real-time monitoring, performance metrics, and intelligent task orchestration. Features a modern dashboard with system status tracking, workflow analytics, and comprehensive audit logging.",
+    description: "Elite AI-powered workflow automation platform with real-time monitoring, performance metrics, and intelligent task orchestration. Features a modern dashboard with system status tracking, workflow analytics, and comprehensive audit logging. (Note: Hosted on Render free tier - may take 30-60 seconds to wake up on first visit)",
     image: projectAgenticWorkflows,
     techStack: ["Python", "AI/ML", "Workflow Automation", "Dashboard UI"],
     liveUrl: "https://agentic-workflows-pm7n.onrender.com",
