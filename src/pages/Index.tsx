@@ -13,20 +13,32 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Suraj Kumar | Full Stack Developer Portfolio</title>
-        <meta name="description" content="Suraj Kumar - Aspiring Full Stack Developer & B.Tech CSE student at Lovely Professional University. Skilled in JavaScript, Python, React, and AI/ML. View my projects and certifications." />
-        <meta name="keywords" content="Suraj Kumar, Full Stack Developer, Web Developer, Portfolio, JavaScript, Python, React, B.Tech CSE, LPU, AI ML" />
-        <link rel="canonical" href="https://surajkumar.dev" />
+        <title>Suraj Kumar | Full Stack Developer & AI/ML Enthusiast</title>
+        <meta name="description" content="Suraj Kumar - Aspiring Full Stack Developer & AI/ML Enthusiast. B.Tech CSE student at LPU skilled in JavaScript, Python, React, Spring Boot, and modern web technologies. View my projects, certifications, and achievements." />
+        <meta name="keywords" content="Suraj Kumar, Full Stack Developer, Web Developer, AI ML Enthusiast, Portfolio, JavaScript, Python, React, Spring Boot, B.Tech CSE, LPU, Bihar India, Software Engineer" />
+        <meta name="author" content="Suraj Kumar" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://surajkumar.site" />
         
-        {/* Open Graph */}
-        <meta property="og:title" content="Suraj Kumar | Full Stack Developer Portfolio" />
-        <meta property="og:description" content="Aspiring Full Stack Developer skilled in JavaScript, Python, and modern web technologies." />
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://surajkumar.site" />
+        <meta property="og:title" content="Suraj Kumar | Full Stack Developer & AI/ML Enthusiast" />
+        <meta property="og:description" content="Aspiring Full Stack Developer skilled in JavaScript, Python, React, and AI/ML. B.Tech CSE student at LPU with hands-on experience from hackathons and industry simulations." />
+        <meta property="og:image" content="https://surajkumar.site/og-image.png" />
+        <meta property="og:site_name" content="Suraj Kumar Portfolio" />
+        <meta property="og:locale" content="en_US" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Suraj Kumar | Full Stack Developer Portfolio" />
-        <meta name="twitter:description" content="Aspiring Full Stack Developer skilled in JavaScript, Python, and modern web technologies." />
+        <meta name="twitter:url" content="https://surajkumar.site" />
+        <meta name="twitter:title" content="Suraj Kumar | Full Stack Developer & AI/ML Enthusiast" />
+        <meta name="twitter:description" content="Aspiring Full Stack Developer skilled in JavaScript, Python, React, and AI/ML. B.Tech CSE student at LPU." />
+        <meta name="twitter:image" content="https://surajkumar.site/og-image.png" />
+        
+        {/* Additional SEO */}
+        <meta name="theme-color" content="#1db88e" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
