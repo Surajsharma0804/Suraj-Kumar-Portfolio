@@ -93,21 +93,25 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 bg-secondary/20 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--border)/0.1)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--border)/0.1)_1px,transparent_1px)] bg-[size:48px_48px]" />
+    <section id="contact" className="py-24 px-4 bg-gradient-subtle relative overflow-hidden">
+      {/* Enhanced Background */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-40" />
+      <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--primary)/0.04)_1.5px,transparent_1.5px),linear-gradient(90deg,hsl(var(--primary)/0.04)_1.5px,transparent_1.5px)] bg-[size:64px_64px]" />
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px]" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px]" />
       
       <div className="container max-w-6xl mx-auto relative">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-14">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
+            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-strong text-primary text-sm font-semibold mb-6 border border-primary/30 shadow-glow">
               <MessageSquare className="w-4 h-4" />
               Contact
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 tracking-tight">
               Let's Connect
             </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full mb-6" />
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Have a project in mind or want to discuss opportunities? Feel free to reach out!
             </p>
@@ -117,7 +121,7 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-12">
           {/* Contact Info */}
           <ScrollReveal direction="left" delay={200} className="lg:col-span-2">
-            <div className="p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 mb-6">
+            <div className="p-6 rounded-2xl glass-strong border border-border/60 hover:border-primary/40 hover:shadow-glow transition-all duration-300 mb-6">
               <h3 className="font-semibold text-foreground mb-5">Get in Touch</h3>
               <div className="space-y-4">
                 {contactInfo.map((info) => (
@@ -165,7 +169,7 @@ const ContactSection = () => {
 
           {/* Contact Form */}
           <ScrollReveal direction="right" delay={400} className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="space-y-5 p-6 md:p-8 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 hover:border-primary/20 transition-colors">
+            <form onSubmit={handleSubmit} className="space-y-5 p-6 md:p-8 rounded-2xl glass-strong border border-border/60 hover:border-primary/30 hover:shadow-glow transition-all duration-300">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <Input
@@ -217,7 +221,7 @@ const ContactSection = () => {
                 type="submit"
                 size="lg"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-primary text-primary-foreground font-semibold hover:opacity-90 hover:scale-[1.01] transition-all h-12"
+                className="w-full bg-gradient-to-r from-primary via-accent to-primary text-primary-foreground font-bold hover:shadow-glow-lg hover:scale-[1.02] transition-all h-12 rounded-xl"
               >
                 {isSubmitting ? (
                   "Opening Email..."

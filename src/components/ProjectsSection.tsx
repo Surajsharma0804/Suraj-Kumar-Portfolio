@@ -50,7 +50,7 @@ const projects = [
 
 const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
   return (
-    <div className="group relative bg-card/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-border/50 hover:border-primary/40 transition-all duration-500 hover:shadow-hover hover:-translate-y-2">
+    <div className="group relative glass-strong rounded-2xl overflow-hidden border border-border/60 hover:border-primary/50 transition-all duration-500 hover:shadow-glow-lg hover:-translate-y-2">
       {/* Image */}
       <div className="relative h-48 overflow-hidden bg-secondary/50">
         <img
@@ -134,21 +134,24 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-24 px-4 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
+    <section id="projects" className="py-24 px-4 relative overflow-hidden bg-secondary/20">
+      {/* Enhanced Background */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-40" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[150px]" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[150px]" />
       
       <div className="container max-w-6xl mx-auto relative">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-14">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
+            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-strong text-primary text-sm font-semibold mb-6 border border-primary/30 shadow-glow">
               <Folder className="w-4 h-4" />
               Portfolio
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 tracking-tight">
               Featured Projects
             </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full mb-6" />
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               A selection of projects showcasing different skills and technologies.
             </p>

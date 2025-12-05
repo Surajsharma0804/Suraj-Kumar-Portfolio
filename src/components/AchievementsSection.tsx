@@ -33,18 +33,24 @@ const achievements = [
 
 const AchievementsSection = () => {
   return (
-    <section id="achievements" className="py-20 px-4">
-      <div className="container max-w-6xl mx-auto">
+    <section id="achievements" className="py-24 px-4 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-radial from-accent/10 to-transparent rounded-full" />
+      
+      <div className="container max-w-6xl mx-auto relative">
         {/* Section Header */}
         <ScrollReveal>
-          <div className="text-center mb-12">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-strong text-primary text-sm font-semibold mb-6 border border-primary/30 shadow-glow">
+              <Trophy className="w-4 h-4" />
               Achievements
             </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 tracking-tight">
               Recognition & Awards
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full mb-6" />
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Notable achievements and competitions that showcase my dedication and skills.
             </p>
           </div>
@@ -54,7 +60,7 @@ const AchievementsSection = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {achievements.map((achievement, index) => (
             <ScrollReveal key={achievement.title} delay={index * 150} direction="scale">
-              <div className="group relative p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 overflow-hidden h-full">
+              <div className="group relative p-6 rounded-2xl glass-strong border border-border/60 hover:border-primary/50 hover:shadow-glow-lg transition-all duration-500 hover:-translate-y-2 overflow-hidden h-full">
                 {/* Background decoration */}
                 <div className={`absolute top-0 right-0 w-32 h-32 ${achievement.bgColor} rounded-full blur-3xl opacity-50 group-hover:opacity-80 transition-opacity`} />
                 

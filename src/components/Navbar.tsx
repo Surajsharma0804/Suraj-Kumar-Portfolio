@@ -43,20 +43,21 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/30 shadow-lg"
+          ? "bg-background/85 backdrop-blur-2xl border-b border-border/40 shadow-glow"
           : "bg-transparent"
       )}
     >
       <nav className="w-full px-6 lg:px-12 xl:px-20 h-16 flex items-center justify-between">
-        {/* Logo - Far Left */}
+        {/* Enhanced Logo - Far Left */}
         <a 
           href="#" 
-          className="font-display text-xl font-bold flex items-center gap-2 hover:opacity-80 transition-opacity"
+          className="font-display text-xl font-bold flex items-center gap-2.5 hover:opacity-90 transition-all duration-300 group"
         >
-          <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground text-sm font-bold shadow-lg">
+          <span className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-primary via-accent to-primary flex items-center justify-center text-primary-foreground text-sm font-bold shadow-glow group-hover:scale-110 transition-transform duration-300">
             S
+            <span className="absolute inset-0 bg-gradient-to-br from-accent to-primary rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </span>
-          <span className="bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent tracking-tight">
             Suraj.dev
           </span>
         </a>
@@ -71,13 +72,16 @@ const Navbar = () => {
                 <a
                   href={link.href}
                   className={cn(
-                    "px-4 py-2 text-sm font-medium rounded-full transition-all duration-300",
+                    "px-5 py-2.5 text-sm font-semibold rounded-full transition-all duration-300 relative",
                     isActive 
-                      ? "text-primary-foreground bg-primary shadow-md" 
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                      ? "text-primary-foreground bg-gradient-to-r from-primary to-accent shadow-glow" 
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
                   )}
                 >
                   {link.label}
+                  {isActive && (
+                    <span className="absolute inset-0 bg-gradient-to-r from-accent to-primary rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                  )}
                 </a>
               </li>
             );

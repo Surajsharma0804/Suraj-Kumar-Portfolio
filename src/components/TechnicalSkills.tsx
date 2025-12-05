@@ -60,21 +60,24 @@ const additionalSkills = [
 const TechnicalSkills = () => {
   return (
     <section id="skills" className="py-24 px-4 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
-      <div className="absolute top-1/4 -left-32 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 -right-32 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
+      {/* Enhanced Background decoration */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-40" />
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/10 rounded-full blur-[120px]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/5 to-transparent rounded-full" />
 
       <div className="container max-w-6xl mx-auto relative">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
+            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-strong text-primary text-sm font-semibold mb-6 border border-primary/30 shadow-glow">
+              <Code className="w-4 h-4" />
               Technical Skills
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 tracking-tight">
               Technologies I Work With
             </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full mb-6" />
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               A growing toolkit of programming languages, frameworks, and technologies.
             </p>
@@ -85,7 +88,7 @@ const TechnicalSkills = () => {
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {skillCategories.map((category, catIndex) => (
             <ScrollReveal key={category.title} delay={catIndex * 100}>
-              <div className="p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-glow group h-full">
+              <div className="p-6 rounded-2xl glass-strong border border-border/60 hover:border-primary/40 transition-all duration-500 hover:shadow-glow group h-full">
                 <div className="flex items-center gap-3 mb-5">
                   <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${category.color} p-0.5`}>
                     <div className="w-full h-full rounded-[10px] bg-card flex items-center justify-center text-foreground">
