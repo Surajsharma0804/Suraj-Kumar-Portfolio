@@ -1,59 +1,58 @@
-# Welcome to MY Portfolio
+# Suraj Kumar - Portfolio
 
-## Project info
+Premium, minimalist portfolio website showcasing my work as a Full Stack Developer and AI/ML Enthusiast.
 
-**URL**: https://surajkumar.site
+## 🌐 Live Site
 
-**Previous URL**: https://suraj-kumar-portfolio-0804.vercel.app/
+**https://surajkumar.site**
 
-## How can I edit this code?
+## 🚀 Tech Stack
 
-There are several ways of editing your application.
+- **Framework**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Animations**: CSS Animations
+- **Deployment**: Vercel
+- **Design**: Apple/Stripe/Vercel inspired minimalism
 
+## 🎨 Design System
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Color Palette**: Deep Navy (#0F172A), Elegant Blue (#3B82F6), Soft White (#F8FAFC)
+- **Typography**: Inter font family
+- **Style**: Premium minimalist aesthetic
 
-Follow these steps:
+## 📦 Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+# Clone repository
+git clone https://github.com/Surajsharma0804/Suraj-Kumar-Portfolio.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to directory
+cd Suraj-Kumar-Portfolio
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🛠️ Development
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run dev      # Start dev server
+npm run build    # Build for production
+npm run preview  # Preview production build
+npm run lint     # Run ESLint
+```
 
-**Use GitHub Codespaces**
+## 📧 Contact
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **Email**: surajkumarind08@gmail.com
+- **LinkedIn**: [linkedin.com/in/surajkumar0804](https://www.linkedin.com/in/surajkumar0804)
+- **GitHub**: [github.com/Surajsharma0804](https://github.com/Surajsharma0804)
 
-## What technologies are used for this project?
+## 📄 License
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-
-## Can I connect a custom domain to my project?
+© 2024 Suraj Kumar. All rights reserved.

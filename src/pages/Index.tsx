@@ -37,8 +37,33 @@ const Index = () => {
         <meta name="twitter:image" content="https://surajkumar.site/og-image.png" />
         
         {/* Additional SEO */}
-        <meta name="theme-color" content="#1db88e" />
+        <meta name="theme-color" content="#3B82F6" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Suraj Kumar",
+            "url": "https://surajkumar.site",
+            "image": "https://surajkumar.site/og-image.png",
+            "jobTitle": "Full Stack Developer",
+            "worksFor": {
+              "@type": "EducationalOrganization",
+              "name": "Lovely Professional University"
+            },
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "Lovely Professional University"
+            },
+            "knowsAbout": ["JavaScript", "Python", "React", "AI/ML", "Full Stack Development"],
+            "sameAs": [
+              "https://github.com/Surajsharma0804",
+              "https://www.linkedin.com/in/surajkumar0804"
+            ]
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
