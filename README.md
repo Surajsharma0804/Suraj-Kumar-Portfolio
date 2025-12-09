@@ -1,6 +1,6 @@
 # Suraj Kumar - Portfolio
 
-Premium, minimalist portfolio website showcasing my work as a Full Stack Developer and AI/ML Enthusiast.
+Professional portfolio website showcasing my work as a Full Stack Developer and AI/ML Enthusiast.
 
 ## 🌐 Live Site
 
@@ -12,15 +12,14 @@ Premium, minimalist portfolio website showcasing my work as a Full Stack Develop
 - **Build Tool**: Vite
 - **Styling**: Tailwind CSS
 - **UI Components**: shadcn/ui
-- **Animations**: CSS Animations
+- **Animations**: Subtle CSS transitions
 - **Deployment**: Vercel
-- **Design**: Apple/Stripe/Vercel inspired minimalism
 
 ## 🎨 Design System
 
-- **Color Palette**: Deep Navy (#0F172A), Elegant Blue (#3B82F6), Soft White (#F8FAFC)
+- **Color Palette**: Dark Blue-Gray (#1C2333), Professional Blue (#4A9EFF), Off-White (#F1F5F9)
 - **Typography**: Inter font family
-- **Style**: Premium minimalist aesthetic
+- **Style**: Clean, professional design
 
 ## 📦 Installation
 

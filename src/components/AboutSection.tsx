@@ -1,4 +1,4 @@
-import { Calendar, MapPin, GraduationCap, Target, Brain, Code, Sparkles } from "lucide-react";
+import { Calendar, MapPin, GraduationCap, Target, Brain, Code, User } from "lucide-react";
 import profileAvatar from "@/assets/profile-avatar.png";
 import ScrollReveal from "./ScrollReveal";
 
@@ -32,23 +32,18 @@ const interests = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 px-4 relative overflow-hidden">
-      {/* Exciting Background */}
-      <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-l from-purple-500/20 to-transparent rounded-full blur-[100px] animate-pulse-glow" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-r from-cyan-500/20 to-transparent rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
-      
+    <section id="about" className="py-24 px-4 relative bg-secondary/20">
       <div className="container max-w-6xl mx-auto relative">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-300 text-sm font-semibold mb-6 animate-pulse-glow">
+            <span className="inline-block px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
               About Me
             </span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
-              Get to <span className="text-gradient bg-gradient-to-r from-purple-400 to-pink-400">Know Me</span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              Get to <span className="text-primary">Know Me</span>
             </h2>
-            <p className="text-white/70 max-w-2xl mx-auto text-lg">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Background, education, and what drives me
             </p>
           </div>
@@ -57,15 +52,15 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-12">
           {/* Profile & Bio - Left Side */}
           <ScrollReveal direction="left" delay={200} className="lg:col-span-2">
-            {/* Glowing Profile Card */}
-            <div className="card-glow p-6 mb-6 hover-glow-purple">
+            {/* Profile Card */}
+            <div className="glass-strong p-6 rounded-xl mb-6 border hover:border-primary/30 transition-all">
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-4">
-                  <div className="w-28 h-28 rounded-2xl overflow-hidden border-2 border-primary/30 shadow-glow">
+                  <div className="w-28 h-28 rounded-xl overflow-hidden border-2 border-primary/30">
                     <img src={profileAvatar} alt="Suraj Kumar - Full Stack Developer" className="w-full h-full object-cover" />
                   </div>
                   <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-primary rounded-full border-4 border-card flex items-center justify-center">
-                    <Sparkles className="w-3 h-3 text-primary-foreground" />
+                    <User className="w-3 h-3 text-primary-foreground" />
                   </div>
                 </div>
                 <h3 className="font-display text-xl font-bold text-foreground mb-1">Suraj Kumar</h3>
@@ -78,7 +73,7 @@ const AboutSection = () => {
             </div>
 
             {/* Career Objective */}
-            <div className="p-5 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300 mb-6">
+            <div className="p-5 rounded-xl bg-card border border-border hover:border-primary/30 transition-all mb-6">
               <h4 className="flex items-center gap-2 font-semibold text-foreground mb-3">
                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Target className="w-4 h-4 text-primary" />
@@ -94,13 +89,12 @@ const AboutSection = () => {
 
             {/* Interests */}
             <div className="flex flex-wrap gap-2">
-              {interests.map((interest, index) => (
+              {interests.map((interest) => (
                 <div
                   key={interest.label}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-card/80 border border-border/50 hover:border-primary/30 transition-all duration-300 group"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-card border border-border hover:border-primary/30 transition-all"
                 >
-                  <interest.icon className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
+                  <interest.icon className="w-4 h-4 text-primary" />
                   <span className="text-sm text-foreground font-medium">{interest.label}</span>
                 </div>
               ))}
@@ -109,9 +103,9 @@ const AboutSection = () => {
 
           {/* Education Timeline - Right Side */}
           <ScrollReveal direction="right" delay={400} className="lg:col-span-3">
-            <div className="p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50">
+            <div className="p-6 rounded-xl bg-card border border-border">
               <h4 className="font-semibold text-foreground mb-6 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <GraduationCap className="w-5 h-5 text-primary" />
                 </div>
                 Educational Journey
@@ -119,7 +113,7 @@ const AboutSection = () => {
               
               <div className="relative">
                 {/* Timeline line */}
-                <div className="absolute left-[17px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary/50 via-primary/20 to-transparent" />
+                <div className="absolute left-[17px] top-2 bottom-2 w-0.5 bg-border" />
 
                 <div className="space-y-5">
                   {education.map((item, index) => (
@@ -128,14 +122,14 @@ const AboutSection = () => {
                         {/* Timeline dot */}
                         <div className={`absolute left-1.5 top-1.5 w-4 h-4 rounded-full border-2 ${
                           item.current 
-                            ? 'bg-primary border-primary animate-pulse' 
+                            ? 'bg-primary border-primary' 
                             : 'bg-card border-primary/50'
                         }`} />
 
-                        <div className={`p-4 rounded-xl border transition-all duration-300 group ${
+                        <div className={`p-4 rounded-lg border transition-all ${
                           item.current 
                             ? 'bg-primary/5 border-primary/30' 
-                            : 'bg-secondary/30 border-border/50 hover:border-primary/30'
+                            : 'bg-secondary/30 border-border hover:border-primary/30'
                         }`}>
                           <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                             <span className="text-xs text-muted-foreground flex items-center gap-1.5 bg-background/50 px-2 py-0.5 rounded-full">
@@ -150,7 +144,7 @@ const AboutSection = () => {
                               {item.grade}
                             </span>
                           </div>
-                          <h5 className="font-semibold text-foreground group-hover:text-primary transition-colors text-sm md:text-base">
+                          <h5 className="font-semibold text-foreground text-sm md:text-base">
                             {item.degree}
                           </h5>
                           <p className="text-sm text-muted-foreground mt-1">{item.institution}</p>

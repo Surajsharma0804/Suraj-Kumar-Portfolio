@@ -26,30 +26,26 @@ const achievements = [
     participants: "300+",
     year: "2020",
     icon: Star,
-    color: "text-purple-500",
-    bgColor: "bg-purple-500/10",
+    color: "text-green-500",
+    bgColor: "bg-green-500/10",
   },
 ];
 
 const AchievementsSection = () => {
   return (
-    <section id="achievements" className="py-24 px-4 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-radial from-accent/10 to-transparent rounded-full" />
-      
+    <section id="achievements" className="py-24 px-4 relative bg-secondary/20">
       <div className="container max-w-6xl mx-auto relative">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-14">
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-strong text-primary text-sm font-semibold mb-6 border border-primary/30 shadow-glow">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
               <Trophy className="w-4 h-4" />
               Achievements
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 tracking-tight">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               Recognition & Awards
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full mb-6" />
+            <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-6" />
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Notable achievements and competitions that showcase my dedication and skills.
             </p>
@@ -60,13 +56,13 @@ const AchievementsSection = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {achievements.map((achievement, index) => (
             <ScrollReveal key={achievement.title} delay={index * 150} direction="scale">
-              <div className="group relative p-6 rounded-2xl glass-strong border border-border/60 hover:border-primary/50 hover:shadow-glow-lg transition-all duration-500 hover:-translate-y-2 overflow-hidden h-full">
+              <div className="group relative p-6 rounded-xl glass-strong border border-border hover:border-primary/50 transition-all hover:-translate-y-1 overflow-hidden h-full">
                 {/* Background decoration */}
-                <div className={`absolute top-0 right-0 w-32 h-32 ${achievement.bgColor} rounded-full blur-3xl opacity-50 group-hover:opacity-80 transition-opacity`} />
+                <div className={`absolute top-0 right-0 w-32 h-32 ${achievement.bgColor} rounded-full blur-3xl opacity-50`} />
                 
                 <div className="relative">
                   {/* Icon */}
-                  <div className={`w-14 h-14 rounded-2xl ${achievement.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                  <div className={`w-14 h-14 rounded-xl ${achievement.bgColor} flex items-center justify-center mb-4`}>
                     <achievement.icon className={`w-7 h-7 ${achievement.color}`} />
                   </div>
 

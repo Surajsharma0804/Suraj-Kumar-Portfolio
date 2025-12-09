@@ -5,7 +5,7 @@ const certifications = [
   {
     category: "Industry Job Simulations",
     icon: <Briefcase className="w-5 h-5" />,
-    color: "from-blue-500 to-cyan-500",
+    color: "from-blue-500 to-blue-600",
     items: [
       {
         title: "AWS Solutions Architecture",
@@ -31,7 +31,7 @@ const certifications = [
   {
     category: "Technical Certifications",
     icon: <GraduationCap className="w-5 h-5" />,
-    color: "from-purple-500 to-pink-500",
+    color: "from-slate-500 to-slate-600",
     items: [
       { title: "Programming Using C++", issuer: "Infosys Springboard", date: "Aug 2025" },
       { title: "Python (Basic)", issuer: "HackerRank" },
@@ -48,23 +48,19 @@ const certifications = [
 
 const CertificationsSection = () => {
   return (
-    <section id="certifications" className="py-24 px-4 bg-gradient-subtle relative overflow-hidden">
-      {/* Enhanced Background pattern */}
-      <div className="absolute inset-0 bg-gradient-mesh opacity-40" />
-      <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--primary)/0.04)_1.5px,transparent_1.5px),linear-gradient(90deg,hsl(var(--primary)/0.04)_1.5px,transparent_1.5px)] bg-[size:72px_72px]" />
-      
+    <section id="certifications" className="py-24 px-4 bg-background relative">
       <div className="container max-w-6xl mx-auto relative">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-14">
-            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-strong text-primary text-sm font-semibold mb-6 border border-primary/30 shadow-glow">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
               <Award className="w-4 h-4" />
               Certifications
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 tracking-tight">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               Professional Credentials
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full mb-6" />
+            <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-6" />
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Industry-recognized certifications validating my technical expertise.
             </p>
@@ -87,9 +83,9 @@ const CertificationsSection = () => {
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {category.items.map((cert, index) => (
                   <ScrollReveal key={cert.title} delay={(catIndex * 200) + (index * 80)} direction="scale">
-                    <div className="group p-4 rounded-xl glass border border-border/60 hover:border-primary/50 hover:shadow-glow transition-all duration-300 hover:-translate-y-1 h-full">
+                    <div className="group p-4 rounded-xl glass border border-border hover:border-primary/50 transition-all hover:-translate-y-1 h-full">
                       <div className="flex items-start gap-3">
-                        <div className={`flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
+                        <div className={`flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center transition-all ${
                           cert.highlight 
                             ? 'bg-primary/20 text-primary' 
                             : 'bg-secondary text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary'

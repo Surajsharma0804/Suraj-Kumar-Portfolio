@@ -37,7 +37,7 @@ const Index = () => {
         <meta name="twitter:image" content="https://surajkumar.site/og-image.png" />
         
         {/* Additional SEO */}
-        <meta name="theme-color" content="#a855f7" />
+        <meta name="theme-color" content="#4A9EFF" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
         {/* Structured Data */}
